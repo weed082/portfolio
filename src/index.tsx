@@ -1,17 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Checkbox from './component/part/checkbox/Checkbox';
-import Toggle from './component/part/toggle/Toggle';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter, Routes, Link, Route } from 'react-router-dom';
+import Checkbox from './components/parts/checkbox/checkbox';
+import Toggle from './components/parts/toggle/toggle';
+import Home from './components/pages/home/home';
+import Register from './components/pages/register/register';
+import NotFound from './components/pages/notfound/notfound';
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path='/toggle' element={<Toggle />} />
-        <Route path='/checkbox' element={<Checkbox />} />
+        <Route path='*' element={<NotFound />}></Route>
+        <Route path='' element={<Home />} />
+        <Route path='register' element={<Register />} />
+        <Route path='toggle' element={<Toggle />} />
+        <Route path='checkbox' element={<Checkbox />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,

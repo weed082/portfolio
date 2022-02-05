@@ -1,5 +1,5 @@
 import React from 'react';
-import './Checkbox.css';
+import './checkbox.css';
 
 export default function Checkbox() {
   return (
