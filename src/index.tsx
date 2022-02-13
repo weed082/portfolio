@@ -16,8 +16,7 @@ ReactDOM.render(
         <Route path='*' element={<NotFound />}></Route>
         <Route path='' element={<Home />} />
         <Route path='register' element={<Register />} />
-        <Route path='toggle' element={<Toggle />} />
-        <Route path='checkbox' element={<Checkbox />} />
+        <Route path='toggle' element={<Toggle />} /> <Route path='checkbox' element={<Checkbox />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,
