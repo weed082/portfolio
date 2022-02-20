@@ -8,6 +8,10 @@ import Toggle from './components/parts/toggle/toggle';
 import Home from './components/pages/home/home';
 import Register from './components/pages/register/register';
 import NotFound from './components/pages/notfound/notfound';
+import ChatModel from './model/chat'
+
+// model
+export const chatModel = new ChatModel(); // chat model
 
 ReactDOM.render(
   <React.StrictMode>
