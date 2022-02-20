@@ -1,13 +1,15 @@
 import React from 'react';
 import './checkbox.css';
 
-export default function Checkbox() {
+export default function Checkbox  () {
   return (
     <div
       className='checkbox'
       onClick={(e) => {
         const checkbox = e.currentTarget;
-        checkbox.classList.contains('active') ? checkbox.classList.remove('active') : checkbox.classList.add('active');
+        checkbox.classList.contains('active')
+          ? checkbox.classList.remove('active')
+          : checkbox.classList.add('active');
       }}
     >
       <svg width='12px' height='9px' viewBox='0 0 12 9'>
@@ -15,4 +17,5 @@ export default function Checkbox() {
       </svg>
     </div>
   );
-}
+};
+
