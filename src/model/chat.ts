@@ -8,25 +8,33 @@ type Msg = {
 
 export default class ChatModel {
   private ws = new WebSocket('ws://localhost:5000/chat');
+
   constructor() {
+    if (!this.ws) {
+      console.error('cannot connect to server');
+      return;
+    }
     this.ws.onopen = this.onConnect.bind(this);
-    this.ws.onmessage = this.onReceiveMsg.bind(this);
   }
 
   //* on connect to ws socket
   private onConnect() {
-    const msg: Msg = { name: 'tom' };
-    const req: Req = { type: 1, body: msg };
+    const req: Req = { type: 1, body: { userIdx: 1, name: 'tom' } };
     this.sendMsg(req);
   }
 
-  //* on receive msg
-  private onReceiveMsg(e: MessageEvent) {
-    const msg = JSON.parse(e.data);
-    console.log(msg);
+  // add msg listener
+  addMsgListener(listener: (e: Event) => {}) {
+    this.ws.addEventListener('message', listener);
   }
 
-  private sendMsg(msg: Req) {
+  // remove msg listener
+  removeMsgListener(listener: (e: Event) => {}) {
+    this.ws.removeEventListener('message', listener);
+  }
+
+  // send msg
+  sendMsg(msg: Req) {
     const jsonMsg = JSON.stringify(msg);
     this.ws.send(jsonMsg);
   }
