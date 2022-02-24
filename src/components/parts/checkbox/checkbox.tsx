@@ -1,11 +1,11 @@
 import React from 'react';
 import './checkbox.css';
 
-export default function Checkbox  () {
+export default function Checkbox() {
   return (
     <div
       className='checkbox'
-      onClick={(e) => {
+                                onClick={(e) => {
         const checkbox = e.currentTarget;
         checkbox.classList.contains('active')
           ? checkbox.classList.remove('active')
@@ -17,5 +17,4 @@ export default function Checkbox  () {
       </svg>
     </div>
   );
-};
-
+}
