@@ -1,7 +1,7 @@
 import React from 'react';
 import './toggle.css';
 
-export default function Toggle () {
+export default function Toggle() {
   return (
     <div
       className='toggle'
@@ -15,5 +15,4 @@ export default function Toggle () {
       <span></span>
     </div>
   );
-};
-
+}
