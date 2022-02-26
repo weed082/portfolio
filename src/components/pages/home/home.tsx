@@ -4,9 +4,9 @@ import Nav from '../../nav/nav';
 
 export default function Home() {
   return (
-    <main>
-      <Header />
-      <Nav />
-    </main>
+      <main>
+        <Header />
+        <Nav />
+      </main>
   );
 }
